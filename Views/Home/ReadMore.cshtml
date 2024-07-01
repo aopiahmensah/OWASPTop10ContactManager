@@ -1,0 +1,164 @@
+﻿@{
+    ViewData["Title"] = "Navigating the OWASP Top Ten Vulnerability Demonstration Application";
+}
+
+<div class="text-center">
+    <h3 class="display-2">Navigating the OWASP Top Ten Vulnerability Demonstration Application</h3>
+
+    <p style="text-align:justify">
+        TWelcome to the "OWASP Top Ten Vulnerability Demonstration" application. This guide will help you navigate through the application to understand the implemented vulnerabilities and their mitigations.
+        The application showcases both vulnerable and secure implementations for each of the OWASP Top Ten vulnerabilities, providing a comprehensive learning experience.
+    </p>
+
+</div>
+<div>
+    <h5>Overview of the Application</h5>
+    <p>
+        The application is a contact manager where users can:
+        <ul>
+            <li>Register and log in</li>
+            <li>Create, view, edit, and delete contacts</li>
+        </ul>
+        Each contact includes a name, description, and creation date, associated with a specific user.
+    </p>
+    <h5>Application Architecture</h5>
+    <p>
+        <ul>
+            <li>Frontend: Razor Pages for user interface</li>
+            <li>Backend: ASP.NET Core with Entity Framework Core for data handling and business logic</li>
+            <li>Database: SQL Server for data storage</li>
+        </ul>
+    </p>
+    <h5>Navigating the Vulnerabilities</h5>
+    <p>
+
+        <ul>
+            <li>A01:2021 – Broken Access Control</li>
+            <ul>
+                <li>Backend: ASP.NET Core with Entity Framework Core for data handling and business logic</li>
+                <li>Database: SQL Server for data storage</li>
+            </ul>
+
+        </ul>
+        <ul>
+            <li>A02:2021 – Cryptographic Failures</li>
+            <p>Controller: CryptographicFailuresController</p>
+            <ul>
+                <li>Explore insecure cryptographic practices and their secure alternatives.</li>
+                <li>Understand the importance of using strong cryptographic algorithms and proper key management.</li>
+            </ul>
+
+        </ul>
+        <ul>
+            <li>A03:2021 – Injection</li>
+            <p>Controller: InjectionController</p>
+            <ul>
+                <li>Review examples of SQL injection and other types of injection attacks.</li>
+                <li>Compare vulnerable code with secure coding practices that use parameterized queries and ORM features.</li>
+            </ul>
+
+        </ul>
+        <ul>
+            <li>A04:2021 – Insecure Design</li>
+            <p>Controller: InsecureDesignController</p>
+            <ul>
+                <li>Identify insecure design patterns and how they can be avoided.</li>
+                <li>Understand the principles of secure software design.</li>
+            </ul>
+
+        </ul>
+        <ul>
+            <li>A05:2021 – Security Misconfiguration</li>
+            <p>File: SecurityMisconfiguration.cs</p>
+            <ul>
+                <li>Discover common security misconfigurations that can leave applications vulnerable.</li>
+                <li>See how to configure your application securely to mitigate these risks.</li>
+            </ul>
+
+        </ul>
+        <ul>
+            <li>A06:2021 – Vulnerable and Outdated Components</li>
+            <p>File: VulnerableAndOutdatedComponents.cs</p>
+            <ul>
+                <li>Understand the risks of using outdated and vulnerable components in your application.</li>
+                <li>Learn best practices for keeping your dependencies up-to-date and secure.</li>
+            </ul>
+
+        </ul>
+        <ul>
+            <li>A07:2021 – Identification and Authentication Failures</li>
+            <p>Controller: IdentificationAndAuthenticationFailuresController</p>
+            <ul>
+                <li>Learn about common authentication issues, such as weak passwords and improper session management.</li>
+                <li>See how to implement secure authentication mechanisms.</li>
+            </ul>
+
+        </ul>
+        <ul>
+            <li>A08:2021 – Software and Data Integrity Failures</li>
+            <p>Controller: SoftwareAndDataIntegrityFailuresController</p>
+            <ul>
+                <li>Explore vulnerabilities related to software and data integrity, such as insecure deserialization.</li>
+                <li>Implement measures to ensure data integrity and secure software updates.</li>
+            </ul>
+
+        </ul>
+        <ul>
+            <li>A09:2021 – Security Logging and Monitoring Failures</li>
+            <p>Controller: SecurityLoggingAndMonitoringFailuresController</p>
+            <ul>
+                <li>Recognize the importance of proper logging and monitoring for security.</li>
+                <li>Learn how to implement effective logging and monitoring to detect and respond to security incidents.</li>
+            </ul>
+
+        </ul>
+        <ul>
+            <li>A10:2021 – Server-Side Request Forgery (SSRF)</li>
+            <p>Controller: SSRFController</p>
+            <ul>
+                <li>Understand SSRF attacks and their potential impact.</li>
+                <li>Learn how to validate and sanitize input to prevent SSRF vulnerabilities.</li>
+            </ul>
+
+        </ul>
+    </p>
+</div>
+<div>
+    <h5>How to Use the Application</h5>
+    <ol>
+        <li>
+            Setup and Installation
+            <ul>
+                <li>
+                    Clone the repository and set up the application as per the instructions in the README file.
+                </li>
+                <li>
+                    Ensure you have SQL Server and the necessary .NET dependencies installed.
+                </li>
+            </ul>
+        </li>
+        <li>
+            Explore the Vulnerabilities:
+            <ul>
+                <li>
+                    Navigate to the specific controllers and files listed above.
+                </li>
+                <li>
+                    Review both the vulnerable and secure code implementations provided.
+                </li>
+                <li>Test the application by performing various actions (e.g., creating a contact, logging in) and observe the differences in behavior between the vulnerable and secure versions.</li>
+            </ul>
+        </li>
+        <li>
+            Learn and Implement:
+            <ul>
+                <li>
+                    Use the insights gained from exploring the vulnerabilities to improve your understanding of secure coding practices.
+                </li>
+                <li>
+                    Apply these practices to your own projects to enhance their security.
+                </li>
+            </ul>
+        </li>
+    </ol>
+</div>

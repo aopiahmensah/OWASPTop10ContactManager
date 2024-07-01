@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h3 class="display-4">Project Description: OWASP Top Ten (2021) Vulnerability Demonstration in .NET</h3>
+    <h5>Overview</h5>
+    <p style="text-align:justify">
+        The "OWASP Top Ten Vulnerability Demonstration" project aims to provide a practical learning platform for developers to understand and mitigate common web application vulnerabilities as identified by the OWASP Top Ten. This project includes a simple contact management web application developed using ASP.NET Core and C#. The application showcases both vulnerable and secure implementations for each of the OWASP Top Ten vulnerabilities, allowing developers to compare and learn effective security practices.
+        Application Purpose and Architecture
+
+        The application is a contact manager where users can register, log in, create, view, edit, and delete contacts. Each contact includes a name, description, and creation date, associated with a specific user. The architecture consists of:
+
+        Frontend: Razor Pages for user interface.
+        Backend: ASP.NET Core with Entity Framework Core for data handling and business logic.
+        Database: SQL Server for data storage.
+    </p>
+    <p>
+        <a asp-action="ReadMore">Read More...</a>
+    </p>
+    @* <p>The project demonstrates the A01:2021 – Broken Access Control vulneralbility through a User Interface, while the others are demonstrated through code.</p> *@
+    
+</div>

@@ -1,0 +1,99 @@
+﻿@using OWASPTop10TaskManager.Utils
+@model IEnumerable<OWASPTop10TaskManager.Models.Contact>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Secure Page - A01:2021 – Broken Access Control</h1>
+<p>
+    on this page, signed in users can only view approved contacts and Edit/Delete/Create New links for their contacts. 
+    Only the last record, created by the signed in user, displays Edit and Delete links. 
+    Other users won't see the last record until a manager or administrator changes the status to "Approved".
+
+</p>
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zip)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+                @* <td>
+            <a asp-action="Edit" asp-route-id="@item.ContactId">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.ContactId">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.ContactId">Delete</a>
+            </td> *@
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @if ((await AuthorizationService.AuthorizeAsync(
+                   User, item,
+                   ContactOperations.Update)).Succeeded)
+                    {
+                        <a asp-action="Edit" asp-controller="Contacts" asp-route-id="@item.ContactId">Edit</a>
+                        <text> | </text>
+                    }
+
+                    <a asp-action="Details" asp-controller="Contacts" asp-route-id="@item.ContactId">Details</a>
+
+                    @if ((await AuthorizationService.AuthorizeAsync(
+                   User, item,
+                   ContactOperations.Delete)).Succeeded)
+                    {
+                        <text> | </text>
+                        <a asp-action="Delete" asp-controller="Contacts" asp-route-id="@item.ContactId">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

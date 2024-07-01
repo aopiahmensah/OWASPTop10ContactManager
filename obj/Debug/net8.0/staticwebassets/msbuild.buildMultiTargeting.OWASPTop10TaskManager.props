@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\OWASPTop10TaskManager.props" />
+</Project>
